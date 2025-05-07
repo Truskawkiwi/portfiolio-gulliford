@@ -1,0 +1,319 @@
+:root {
+    --primary-color: #ffc2e0; /* Light pink */
+    --secondary-color: #b8dcff; /* Gold */
+    --background-color: #fff0f9; /* Floral White */
+    --text-color: hsl(333, 79%, 58%); /* Soft Purple */
+    --border-radius: 12px;
+}
+.cute-hello {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400; /* thinner than 600 */
+    color: var(--text-color);
+    font-size: 3rem;
+  }
+  .big-name {
+    font-size: 2.5rem; /* You can make this larger if you want */
+    font-weight: 2500;
+    color: var(--primary-color);
+  }
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    text-shadow: 2px 2px var(--accent-color);
+    margin: 5px 0;
+}
+
+button {
+    all: unset;
+    display: inline-block;             /* allows smooth transform without breaking layout */
+    margin: 0.10px;                    /* gives breathing room */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, margin 0.3s ease;
+    transform-origin: center;
+  }
+  
+  button:hover {
+    transform: scale(1.2);
+    margin: 0 20px;                    /* expands margin slightly */
+    color: var(--secondary-color);
+  }
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card {
+    background-color: var(--accent-color);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin: 15px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.navbar a {
+    display: inline-block;
+    background-color: white;
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 6px; /* Less curvy than 12px */
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 6px rgba(103, 59, 59, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .navbar a:hover {
+    background-color: #b8dcff; /* a darker soft purple */
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* Layout */
+.intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    max-width: 800px;
+  }
+  
+  /* Image button */
+  .intro-image-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  /* Image itself */
+  .intro-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+  }
+  
+  
+  
+  /* Text block always visible, but slides slightly when image is hovered */
+  .intro-text {
+    transition: transform 0.4s ease;
+    transform: translateX(0);
+  }
+  
+  /* Slide the text when image is hovered */
+  .intro-image-button:hover + .intro-text {
+    transform: translateX(10px);
+  }
+  
+  /* Heading text styling */
+  .intro-text h1 {
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  /* Cute styles */
+  .cute-hello {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.6rem;
+    color: var(--primary-color);
+  }
+  
+  .big-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+    color: var(--text-color);
+  }
+  .carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+  
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  gap: 20px;
+  padding: 10px;
+}
+
+  
+.carousel-slide {
+  flex: 0 0 auto;
+  width: 80%;
+  max-width: 250px;
+  min-width: 150px;
+  height: auto;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+  
+  .carousel-button {
+    all: unset;
+    width: 60px;
+    height: 54px;
+    background: #ffc2e0;
+    position: relative;
+    clip-path: path("M30 52 C28 48, 5 35, 5 20 C5 8, 17 2, 30 12 C43 2, 55 8, 55 20 C55 35, 32 48, 30 52 Z");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .carousel-button:hover {
+    transform: scale(1.1);
+    background: #f59cb3;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carousel-arrow {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto 80px;
+  }
+  
+  .gallery-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  .popup {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border: 12px solid #fff;
+    border-radius: 12px;
+  }
+  
+  .popup span {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar a {
+    padding: 8px 16px;
+    background-color: #fe75be; /* soft pastel pink */
+    color: #fff; /* white text */
+    text-decoration: none;
+    border-radius: 20px; /* round edges */
+    font-weight: 600;
+    margin-right: 12px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar a:hover {
+    background-color: #ff9fcf; /* brighter pink on hover */
+    transform: scale(1.1); /* slightly enlarge on hover */
+  }
+  .navbar .logo {
+    height: 40px;
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .navbar .logo {
+    height: 40px;
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  
+  
+  
+  
